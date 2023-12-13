@@ -1,0 +1,151 @@
+.drawer__overlay {
+  pointer-events: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  transition: all 0.4s;
+  z-index: 10;
+}
+
+.drawer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 380px;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  right: -100%;
+  height: 100%;
+  padding: 30px;
+  transition: right 0.4s;
+  z-index: 30;
+}
+
+.drawer__info {
+  margin-bottom: 20px;
+
+  div {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.drawer__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 30px;
+
+  img {
+    position: relative;
+    z-index: 40;
+    cursor: pointer;
+    padding: 5px;
+  }
+}
+
+.drawer__scroll {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: auto;
+  margin-bottom: 40px;
+}
+
+.drawer__wrapper.open .drawer {
+  right: 0;
+}
+
+.drawer__wrapper.open .drawer__overlay {
+  pointer-events: all;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: auto;
+}
+
+.drawer__btn {
+  @extend %btn;
+
+  &:hover span {
+    right: 30px;
+  }
+}
+
+// span {
+//   width: 10px;
+//   height: 10px;
+//   background-color: white;
+//   position: absolute;
+//   top: 27px;
+//   right: 20px;
+//   border-radius: 50%;
+//   transition: 0.2s ease-in-out;
+// }
+
+// DRAWER CARD ==================================================
+
+.drawerc {
+  padding: 30px 15px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  align-items: center;
+  transition: opacity 0.2s;
+  margin-bottom: 15px;
+
+  img {
+    cursor: pointer;
+  }
+}
+
+.drawerc__close {
+  opacity: 0.5;
+  transition: opacity 0.3s;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.drawerc__title {
+  font-size: 11px;
+  margin-bottom: 5px;
+}
+
+.status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 20px;
+  margin: 0 15px;
+}
+
+.status__title {
+  font-size: 22px;
+  font-weight: 600;
+  color: black;
+}
+
+.status__desc {
+  font-size: 16px;
+  color: $gray;
+}
+
+.status__btn {
+  @extend %btn;
+  // padding: 18px 40px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: rgb(101, 203, 130);
+  cursor: pointer;
+  left: 0;
+  transform: translateY(0);
+}

@@ -1,0 +1,107 @@
+.card {
+  @extend %card;
+
+  &:hover {
+    transform: translateY(-5px);
+    border: 1px solid #f8f8f8;
+    background: #fff;
+    box-shadow: 0px 14px 30px 0px rgba(0, 0, 0, 0.05);
+  }
+
+  .card__img {
+    margin: 0 auto 15px;
+  }
+}
+
+.card__header {
+  display: flex;
+
+  & img {
+    cursor: pointer;
+  }
+
+  .card__like {
+    position: absolute;
+    z-index: 1;
+  }
+}
+
+.card__title {
+  margin-bottom: 15px;
+}
+
+.card__footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card__info {
+  p {
+    color: $light-gray;
+    font-weight: 500;
+  }
+}
+
+.card__add {
+  cursor: pointer;
+}
+
+// CARD-LOADER ==================================
+
+.cardLoad {
+  @extend %card;
+}
+
+@keyframes skelet-animation {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+$skeleton: rgb(243, 243, 243);
+
+.cardLoad__header {
+  width: 150px;
+  height: 120px;
+  background-color: $skeleton;
+
+  border-radius: 5px;
+  margin-bottom: 10px;
+  animation: skelet-animation ease-in-out 0.8s infinite;
+}
+
+.cardLoad__title {
+  width: 150px;
+  height: 30px;
+  background-color: $skeleton;
+  margin-bottom: 10px;
+  animation: skelet-animation ease-in-out 0.8s infinite;
+}
+
+.cardLoad__footer {
+  display: flex;
+
+  .cardLoad__info {
+    width: 80px;
+    height: 30px;
+    background-color: $skeleton;
+    margin-right: 40px;
+    animation: skelet-animation ease-in-out 0.8s infinite;
+  }
+
+  .cardLoad__plus {
+    width: 30px;
+    height: 30px;
+    background-color: $skeleton;
+    animation: skelet-animation ease-in-out 0.8s infinite;
+  }
+}
+
+@media (max-width: 1100px) {
+}

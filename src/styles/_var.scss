@@ -1,0 +1,33 @@
+$light-gray: #9d9d9d;
+$gray: #5c5c5c;
+$dark-gray: #323232;
+$green: #a5d364;
+
+%card {
+  display: flex;
+  padding: 30px 30px 20px;
+  flex-direction: column;
+  border-radius: 40px;
+  border: 1px solid #f3f3f3;
+  background: #fff;
+  transition: transform ease 0.2s;
+}
+
+%btn {
+  position: relative;
+  background-color: rgb(101, 203, 130);
+  padding: 20px 60px;
+  border-radius: 10px;
+  font-weight: 600;
+  color: white;
+  font-size: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  transition: background-color 0.2s;
+  text-align: center;
+
+  &:hover {
+    background-color: rgb(96, 193, 123);
+  }
+}
