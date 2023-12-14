@@ -1,5 +1,7 @@
 import React from "react";
 
+import add from "../../src/img/card/add.svg";
+
 type cardProps = {
   img: string;
   title: string;
@@ -19,7 +21,7 @@ const Card: React.FC<cardProps> = ({ img, title, price }) => {
           <p>Цена:</p>
           <b className="card__price">{price} руб.</b>
         </div>
-        <img className="card__add" src="" />
+        <img className="card__add" src={add} />
       </div>
     </div>
   );

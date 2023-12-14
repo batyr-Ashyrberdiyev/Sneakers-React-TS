@@ -13,7 +13,7 @@ export const fetchSneakers = createAsyncThunk(
   }
 );
 
-type itemsType = {
+export type itemsType = {
   id: string;
   img: string;
   title: string;
@@ -23,6 +23,7 @@ type itemsType = {
 interface homeState {
   items: itemsType[];
   status: "loading" | "success" | "error";
+  search: string;
 }
 
 export enum status {
@@ -34,6 +35,7 @@ export enum status {
 const initialState: homeState = {
   items: [],
   status: "loading",
+  search: "",
 };
 
 export const homeSlice = createSlice({
@@ -42,6 +44,9 @@ export const homeSlice = createSlice({
   reducers: {
     setItems(state, action: PayloadAction<itemsType[]>) {
       state.items = action.payload;
+    },
+    setSearch(state, action: PayloadAction<string>) {
+      state.search = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -56,12 +61,13 @@ export const homeSlice = createSlice({
     builder.addCase(fetchSneakers.rejected, (state) => {
       state.items = [];
       state.status = status.ERROR;
+      alert("Error pending products");
     });
   },
 });
 
-export const selectHome = (state: RootState) => state.homeSlice;
+export const selectHome = (state: RootState) => state.home;
 
-export const { setItems } = homeSlice.actions;
+export const { setItems, setSearch } = homeSlice.actions;
 
 export default homeSlice.reducer;
